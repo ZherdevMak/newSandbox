@@ -17,4 +17,3 @@ function findOutlier(integers){
         return sumeven
     }
 }
-alert(findOutlier([0, 1, 2]))
