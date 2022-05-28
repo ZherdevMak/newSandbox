@@ -1,20 +1,16 @@
 'use strict';
-function findOutlier(integers){
-    let odd = 0;
-    let even = 0;
-    let sumodd = 0;
-    let  sumeven = 0;
-    integers.map(item => {
-        if (item%2 == 0 || item === 0) {
-            sumeven += item;
-            even += 1;
-        } else {
-            sumodd +=item
-            odd += 1;
+function numberOfPairs(gloves) {
+        //My hands are freezing
+    let arr = []
+    arr.push(...gloves)
+    arr.sort()
+    let sum=0
+    for (let i = 0; i<arr.length; ++i)  {
+        if (arr[i] === arr[i + 1] ) {
+            i++;
+            ++sum;
         }
-    })
-    if (odd == 1) {return sumodd} else {
-        return sumeven
     }
+    return sum
 }
-alert(findOutlier([0, 1, 2]))
+alert(numberOfPairs(['gray','black','purple','purple','gray','black']))
